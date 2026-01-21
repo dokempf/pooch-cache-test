@@ -6,8 +6,10 @@ TEST_DATA_ARCHIVE = "https://github.com/3dgeo-heidelberg/py4dgeo-test-data/relea
 TEST_DATA_CHECKSUM = "5ee51a43b008181b829113d8b967cdf519eae4ac37a3301f1eaf53d15d3016cc"
 
 
-for entry in pathlib.Path(pooch.os_cache("foo")).iterdir():
-    print(entry)
+cache =  pathlib.Path(pooch.os_cache("foo"))
+if cache.exists():
+    for entry in cache.iterdir():
+        print(entry)
 
 
 print(pooch.retrieve(
