@@ -1,0 +1,21 @@
+name: Bla
+
+on:
+    workflow_dispatch:
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - uses: dokempf/pooch-cache@main
+              with:
+                name: foo
+            
+            - uses: actions/setup-python@v4
+            
+            - run: |
+                python -m pip install -r requirements.txt
+                python test.py
