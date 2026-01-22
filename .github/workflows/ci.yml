@@ -18,7 +18,8 @@ jobs:
 
             - uses: dokempf/pooch-cache@main
               with:
-                name: foo
+                pooch-name: foo
+    
             
             - uses: actions/setup-python@v4
             
