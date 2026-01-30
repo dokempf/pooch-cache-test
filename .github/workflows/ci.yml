@@ -18,9 +18,14 @@ jobs:
 
             - uses: dokempf/pooch-cache@main
               with:
-                pooch-name: foo
-    
-            
+                name: foo
+                dois: |
+                  10.11588/data/TKCFEF/
+                file-urls: |
+                  https://github.com/3dgeo-heidelberg/py4dgeo-test-data/releases/download/2024-06-28/data.tar.gz
+                known-hashes: |
+                  5ee51a43b008181b829113d8b967cdf519eae4ac37a3301f1eaf53d15d3016cc
+
             - uses: actions/setup-python@v4
             
             - run: |
